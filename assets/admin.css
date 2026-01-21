@@ -1,0 +1,1288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 
+ * Fluid Design Tokens - Modern SaaS Admin Styles
+ * A minimal, clean interface inspired by modern SaaS applications
+ */
+
+/* ===================================
+   CSS Custom Properties (Design Tokens)
+   =================================== */
+:root {
+    /* Colors - Slate/Gray scale */
+    --fdt-gray-50: #f8fafc;
+    --fdt-gray-100: #f1f5f9;
+    --fdt-gray-200: #e2e8f0;
+    --fdt-gray-300: #cbd5e1;
+    --fdt-gray-400: #94a3b8;
+    --fdt-gray-500: #64748b;
+    --fdt-gray-600: #475569;
+    --fdt-gray-700: #334155;
+    --fdt-gray-800: #1e293b;
+    --fdt-gray-900: #0f172a;
+
+    /* Accent Colors */
+    --fdt-primary: #6366f1;
+    --fdt-primary-light: #818cf8;
+    --fdt-primary-dark: #4f46e5;
+    --fdt-success: #10b981;
+    --fdt-success-light: #34d399;
+    --fdt-danger: #ef4444;
+    --fdt-danger-light: #f87171;
+
+    /* Semantic Colors */
+    --fdt-bg: #fafafa;
+    --fdt-surface: #ffffff;
+    --fdt-text-primary: #1e293b;
+    --fdt-text-secondary: #64748b;
+    --fdt-text-muted: #94a3b8;
+    --fdt-border: #e2e8f0;
+    --fdt-border-light: #f1f5f9;
+
+    /* Spacing */
+    --fdt-space-1: 0.25rem;
+    --fdt-space-2: 0.5rem;
+    --fdt-space-3: 0.75rem;
+    --fdt-space-4: 1rem;
+    --fdt-space-5: 1.25rem;
+    --fdt-space-6: 1.5rem;
+    --fdt-space-8: 2rem;
+    --fdt-space-10: 2.5rem;
+    --fdt-space-12: 3rem;
+
+    /* Typography */
+    --fdt-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --fdt-font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+    /* Sizes */
+    --fdt-text-xs: 0.75rem;
+    --fdt-text-sm: 0.875rem;
+    --fdt-text-base: 1rem;
+    --fdt-text-lg: 1.125rem;
+    --fdt-text-xl: 1.25rem;
+    --fdt-text-2xl: 1.5rem;
+
+    /* Borders */
+    --fdt-radius-sm: 6px;
+    --fdt-radius-md: 8px;
+    --fdt-radius-lg: 12px;
+    --fdt-radius-xl: 16px;
+    --fdt-radius-full: 9999px;
+
+    /* Shadows */
+    --fdt-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --fdt-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --fdt-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    /* Transitions */
+    --fdt-transition-fast: 150ms ease;
+    --fdt-transition-base: 200ms ease;
+    --fdt-transition-slow: 300ms ease;
+}
+
+/* Load Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===================================
+   WordPress Admin Reset
+   =================================== */
+.fdt-admin,
+.fdt-admin * {
+    box-sizing: border-box;
+}
+
+.fdt-admin {
+    font-family: var(--fdt-font-sans);
+    color: var(--fdt-text-primary);
+    max-width: 1200px;
+    margin: 0;
+    padding: var(--fdt-space-8) var(--fdt-space-6);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+}
+
+/* Reset WordPress heading styles */
+.fdt-admin h1,
+.fdt-admin h2,
+.fdt-admin h3,
+.fdt-admin h4 {
+    font-family: var(--fdt-font-sans);
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================
+   Page Header
+   =================================== */
+.fdt-admin>h1 {
+    font-size: var(--fdt-text-2xl);
+    font-weight: 700;
+    color: var(--fdt-text-primary);
+    margin-bottom: var(--fdt-space-2);
+    letter-spacing: -0.025em;
+}
+
+.fdt-admin>p {
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-secondary);
+    margin: 0 0 var(--fdt-space-6) 0;
+}
+
+/* ===================================
+   Notices
+   =================================== */
+/* ===================================
+   Container Layout
+   =================================== */
+
+/* ===================================
+   Container Layout
+   =================================== */
+.fdt-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fdt-space-6);
+}
+
+/* Header Design */
+.fdt-header-section {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--fdt-space-5);
+}
+
+.fdt-header-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--fdt-primary);
+    border-radius: var(--fdt-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.fdt-header-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.fdt-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fdt-space-1);
+    padding-top: var(--fdt-space-1);
+}
+
+.fdt-header-section h1 {
+    font-size: var(--fdt-text-xl);
+    font-weight: 700;
+    color: var(--fdt-text-primary);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.fdt-header-section p {
+    font-size: var(--fdt-text-base);
+    color: var(--fdt-text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.fdt-header-notice {
+    font-size: var(--fdt-text-sm) !important;
+    color: var(--fdt-text-muted) !important;
+    margin-top: var(--fdt-space-1) !important;
+}
+
+/* Section Row Layout */
+.fdt-sections-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--fdt-space-6);
+}
+
+/* ===================================
+   Cards / Sections
+   =================================== */
+.fdt-section {
+    background: var(--fdt-surface);
+    padding: var(--fdt-space-6);
+    border-radius: var(--fdt-radius-lg);
+    border: 1px solid var(--fdt-border);
+    box-shadow: none;
+    overflow: visible;
+}
+
+.fdt-section h2 {
+    font-size: var(--fdt-text-base);
+    font-weight: 600;
+    color: var(--fdt-text-primary);
+    margin: 0 0 var(--fdt-space-4) 0;
+    padding: 0;
+    border: none;
+    letter-spacing: -0.01em;
+}
+
+.fdt-section h3 {
+    font-size: var(--fdt-text-sm);
+    font-weight: 600;
+    color: var(--fdt-text-primary);
+    margin: 0 0 var(--fdt-space-3) 0;
+    padding: 0;
+    border: none;
+}
+
+/* Two-column split section */
+.fdt-section-split {
+    display: flex;
+    gap: var(--fdt-space-6);
+}
+
+.fdt-section-column {
+    flex: 1;
+}
+
+.fdt-section>p {
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-secondary);
+    margin: 0 0 var(--fdt-space-5) 0;
+    line-height: 1.5;
+}
+
+/* Import/Export container */
+.fdt-import-export {
+    display: flex;
+    gap: var(--fdt-space-2);
+    align-items: center;
+}
+
+/* ===================================
+   Root Font Size Controls
+   =================================== */
+.fdt-section-row {
+    display: flex;
+    gap: var(--fdt-space-4);
+    align-items: center;
+}
+
+.fdt-root-controls {
+    display: flex;
+    gap: var(--fdt-space-2);
+    margin-bottom: 0;
+}
+
+.fdt-root-controls label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--fdt-space-2);
+    padding: 0.5rem 0.875rem;
+    background: var(--fdt-gray-100);
+    border: 1px solid transparent;
+    border-radius: var(--fdt-radius-md);
+    cursor: pointer;
+    transition: all var(--fdt-transition-fast);
+    font-size: var(--fdt-text-sm);
+    font-weight: 500;
+    color: var(--fdt-text-secondary);
+    white-space: nowrap;
+    height: 36px;
+}
+
+.fdt-root-controls label:hover {
+    background: var(--fdt-gray-200);
+    color: var(--fdt-text-primary);
+}
+
+.fdt-root-controls input[type="radio"] {
+    display: none;
+}
+
+.fdt-root-controls label:has(input[type="radio"]:checked) {
+    background: var(--fdt-primary);
+    color: white;
+    border-color: var(--fdt-primary);
+}
+
+/* ===================================
+   Form Inputs
+   =================================== */
+.fdt-form-row {
+    display: flex;
+    gap: var(--fdt-space-3);
+    align-items: center;
+}
+
+.fdt-form-row input[type="text"],
+.fdt-form-row input[type="number"],
+.fdt-search-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    background: var(--fdt-surface);
+    border: 1px solid rgba(99, 102, 241, 0.5);
+    /* Theme color with opacity */
+    border-color: var(--fdt-primary);
+    /* Fallback/Override */
+    border: 1px solid color-mix(in srgb, var(--fdt-primary), transparent 50%);
+    border-radius: var(--fdt-radius-md);
+    font-family: var(--fdt-font-sans);
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-primary);
+    transition: all var(--fdt-transition-fast);
+    height: 36px;
+    outline: none;
+}
+
+.fdt-form-row input::placeholder,
+.fdt-search-input::placeholder {
+    color: var(--fdt-text-muted);
+}
+
+.fdt-form-row input:hover,
+.fdt-search-input:hover {
+    border-color: var(--fdt-gray-300);
+}
+
+.fdt-admin .fdt-form-row input:focus,
+.fdt-admin .fdt-search-input:focus {
+    border-color: var(--fdt-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    outline: none;
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+.fdt-admin .fdt-form-row button,
+.fdt-admin .button.button-primary,
+.fdt-admin #save-settings,
+.fdt-admin .fdt-modal-actions .button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--fdt-space-2);
+    padding: 0.5rem 1rem;
+    background: var(--fdt-primary) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: var(--fdt-radius-md);
+    font-family: var(--fdt-font-sans);
+    font-size: var(--fdt-text-sm);
+    font-weight: 500;
+    height: 36px;
+    cursor: pointer;
+    transition: all var(--fdt-transition-fast);
+    white-space: nowrap;
+    text-shadow: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Delete Confirmation Button Override */
+.fdt-admin .fdt-modal-actions .fdt-confirm-delete,
+.fdt-admin .fdt-modal-actions .fdt-confirm-delete:hover,
+.fdt-admin .fdt-modal-actions .fdt-confirm-delete:focus,
+.fdt-admin .fdt-modal-actions .fdt-confirm-delete:active {
+    background: var(--fdt-danger) !important;
+    border-color: transparent !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.fdt-admin .fdt-modal-actions .fdt-confirm-delete:hover {
+    background: var(--fdt-danger-hover) !important;
+    /* Fallback if var doesn't exist, will rely on opacity or specific hex later if needed, but for now enforcing danger */
+    filter: brightness(1.1);
+}
+
+
+.fdt-admin .fdt-form-row button:hover,
+.fdt-admin .button.button-primary:hover,
+.fdt-admin #save-settings:hover,
+.fdt-admin .fdt-modal-actions .button-primary:hover,
+.fdt-admin .button.button-primary:focus {
+    background: var(--fdt-primary-dark) !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fdt-admin .fdt-form-row button:active,
+.fdt-admin .button.button-primary:active,
+.fdt-admin #save-settings:active {
+    transform: translateY(0);
+    background: var(--fdt-primary-dark) !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fdt-form-row button:disabled {
+    background: var(--fdt-gray-300);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Secondary/Cancel Button */
+.fdt-modal-actions .button:not(.button-primary),
+#cancel-edit,
+#cancel-static-edit {
+    background: var(--fdt-gray-100) !important;
+    color: var(--fdt-text-secondary) !important;
+    border: none !important;
+    padding: 0.5rem 1rem;
+    border-radius: var(--fdt-radius-md);
+    font-family: var(--fdt-font-sans);
+    font-size: var(--fdt-text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--fdt-transition-fast);
+    height: 36px;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.fdt-modal-actions .button:not(.button-primary):hover,
+#cancel-edit:hover,
+#cancel-static-edit:hover {
+    background: var(--fdt-gray-200) !important;
+    color: var(--fdt-text-primary) !important;
+    transform: none !important;
+}
+
+/* Save Changes Button Override */
+#edit-token-form .button-primary,
+#edit-static-token-form .button-primary {
+    background: var(--fdt-primary) !important;
+    border: none !important;
+    border-color: transparent !important;
+    color: white !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#edit-token-form .button-primary:hover,
+#edit-static-token-form .button-primary:hover {
+    background: var(--fdt-primary-dark) !important;
+    color: white !important;
+}
+
+/* Clear Search Button */
+.fdt-clear-search {
+    background: transparent;
+    color: var(--fdt-text-secondary);
+    border: 1px solid var(--fdt-border);
+    padding: 0.5rem 0.875rem;
+    border-radius: var(--fdt-radius-md);
+    cursor: pointer;
+    font-size: var(--fdt-text-sm);
+    font-weight: 500;
+    transition: all var(--fdt-transition-fast);
+    display: none;
+    height: 36px;
+}
+
+.fdt-clear-search:hover {
+    background: var(--fdt-danger);
+    border-color: var(--fdt-danger);
+    color: white;
+}
+
+.fdt-clear-search.visible {
+    display: inline-flex;
+}
+
+/* ===================================
+   Search Section
+   =================================== */
+.fdt-search-container {
+    display: flex;
+    gap: var(--fdt-space-3);
+    align-items: center;
+}
+
+/* ===================================
+   Add Token Section
+   =================================== */
+.fdt-add-token,
+.fdt-add-static-token {
+    background: var(--fdt-gray-50);
+    padding: var(--fdt-space-5);
+    border-radius: var(--fdt-radius-md);
+    margin-bottom: var(--fdt-space-5);
+    border: 1px solid var(--fdt-border-light);
+    border-left: none;
+}
+
+.fdt-add-token h3,
+.fdt-add-static-token h3 {
+    font-size: var(--fdt-text-sm);
+    font-weight: 600;
+    color: var(--fdt-text-primary);
+    margin: 0 0 var(--fdt-space-4) 0;
+}
+
+/* ===================================
+   Tokens List
+   =================================== */
+.fdt-tokens-list,
+.fdt-static-tokens-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--fdt-space-3);
+}
+
+.fdt-static-tokens-list {
+    margin-top: var(--fdt-space-5);
+}
+
+/* Token Card */
+.fdt-token {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--fdt-space-4);
+    padding: var(--fdt-space-4);
+    background: var(--fdt-surface);
+    border: 1px solid var(--fdt-border);
+    border-radius: var(--fdt-radius-md);
+    transition: all var(--fdt-transition-fast);
+    border-left: 3px solid var(--fdt-primary);
+}
+
+.fdt-token:hover {
+    background: var(--fdt-gray-50);
+    border-color: var(--fdt-gray-300);
+    border-left-color: var(--fdt-primary-dark);
+    box-shadow: var(--fdt-shadow-md);
+}
+
+/* Token Info */
+.fdt-token-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--fdt-space-4);
+}
+
+.fdt-token-name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--fdt-space-2);
+    white-space: nowrap;
+}
+
+.fdt-token-info strong {
+    font-family: var(--fdt-font-mono);
+    font-size: var(--fdt-text-sm);
+    font-weight: 600;
+    color: var(--fdt-primary);
+    letter-spacing: -0.025em;
+}
+
+.fdt-token-value {
+    font-family: var(--fdt-font-mono);
+    font-size: var(--fdt-text-xs);
+    color: var(--fdt-text-secondary);
+    background: var(--fdt-gray-100);
+    padding: var(--fdt-space-2) var(--fdt-space-3);
+    border-radius: var(--fdt-radius-sm);
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: none;
+}
+
+.fdt-token-range {
+    font-size: var(--fdt-text-xs);
+    color: var(--fdt-text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Token Actions */
+.fdt-token-actions {
+    display: flex;
+    gap: var(--fdt-space-2);
+    flex-shrink: 0;
+}
+
+.fdt-edit-token,
+.fdt-edit-static-token {
+    background: transparent;
+    color: var(--fdt-success);
+    border: 1px solid var(--fdt-success);
+    padding: var(--fdt-space-2) var(--fdt-space-4);
+    border-radius: var(--fdt-radius-full);
+    font-size: var(--fdt-text-xs);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--fdt-transition-fast);
+}
+
+.fdt-edit-token:hover,
+.fdt-edit-static-token:hover {
+    background: var(--fdt-success);
+    color: white;
+}
+
+.fdt-delete-token,
+.fdt-delete-static-token {
+    background: transparent;
+    color: var(--fdt-danger);
+    border: 1px solid var(--fdt-danger);
+    padding: var(--fdt-space-2) var(--fdt-space-4);
+    border-radius: var(--fdt-radius-full);
+    font-size: var(--fdt-text-xs);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--fdt-transition-fast);
+}
+
+.fdt-delete-token:hover,
+.fdt-delete-static-token:hover {
+    background: var(--fdt-danger);
+    color: white;
+}
+
+/* ===================================
+   No Tokens Message
+   =================================== */
+.fdt-no-tokens {
+    text-align: center;
+    color: var(--fdt-text-muted);
+    font-size: var(--fdt-text-sm);
+    padding: var(--fdt-space-10);
+    background: var(--fdt-gray-50);
+    border-radius: var(--fdt-radius-md);
+    border: 1px dashed var(--fdt-border);
+}
+
+/* ===================================
+   Copy Button
+   =================================== */
+.fdt-copy-token {
+    background: transparent;
+    border: none;
+    padding: var(--fdt-space-1);
+    cursor: pointer;
+    color: var(--fdt-text-muted);
+    border-radius: var(--fdt-radius-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--fdt-transition-fast);
+}
+
+.fdt-copy-token:hover {
+    background: var(--fdt-gray-100);
+    color: var(--fdt-primary);
+}
+
+.fdt-copy-token.copied {
+    background: var(--fdt-success);
+    color: white;
+}
+
+.fdt-copy-token svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ===================================
+   Usage Examples
+   =================================== */
+.fdt-examples {
+    display: grid;
+    grid-template-columns: 0.8fr 1.1fr 1fr;
+    gap: var(--fdt-space-4);
+    margin-bottom: var(--fdt-space-5);
+}
+
+.fdt-example {
+    background: var(--fdt-gray-50);
+    padding: var(--fdt-space-4);
+    border-radius: var(--fdt-radius-md);
+    border: 1px solid var(--fdt-border-light);
+    overflow: hidden;
+}
+
+.fdt-example h4 {
+    font-size: var(--fdt-text-xs);
+    font-weight: 600;
+    color: var(--fdt-text-secondary);
+    margin: 0 0 var(--fdt-space-3) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.fdt-example code {
+    display: block;
+    background: var(--fdt-gray-800);
+    color: var(--fdt-gray-100);
+    padding: var(--fdt-space-3) var(--fdt-space-4);
+    border-radius: var(--fdt-radius-sm);
+    font-family: var(--fdt-font-mono);
+    font-size: var(--fdt-text-xs);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+/* Current Settings Display */
+.fdt-current-settings {
+    background: var(--fdt-gray-50);
+    padding: var(--fdt-space-4);
+    border-radius: var(--fdt-radius-md);
+    border: 1px solid var(--fdt-border-light);
+}
+
+.fdt-current-settings h4 {
+    font-size: var(--fdt-text-xs);
+    font-weight: 600;
+    color: var(--fdt-text-secondary);
+    margin: 0 0 var(--fdt-space-2) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.fdt-current-settings p {
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-primary);
+    margin: var(--fdt-space-1) 0;
+}
+
+/* ===================================
+   Modal Styles
+   =================================== */
+.fdt-modal {
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.fdt-modal.show {
+    display: block;
+}
+
+.fdt-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 340px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: modalSlideIn 0.2s ease-out;
+    border: 1px solid #e2e8f0;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.fdt-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--fdt-space-5) var(--fdt-space-6);
+    border-bottom: 1px solid var(--fdt-border);
+}
+
+.fdt-modal-header h3 {
+    font-size: var(--fdt-text-lg);
+    font-weight: 600;
+    color: var(--fdt-text-primary);
+    margin: 0;
+}
+
+.fdt-modal-close {
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    color: var(--fdt-text-muted);
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--fdt-radius-md);
+    transition: all var(--fdt-transition-fast);
+}
+
+.fdt-modal-close:hover {
+    background: var(--fdt-gray-100);
+    color: var(--fdt-text-primary);
+}
+
+#edit-token-form,
+#edit-static-token-form {
+    padding: var(--fdt-space-6);
+    padding-bottom: 0;
+}
+
+#edit-token-form .fdt-modal-actions,
+#edit-static-token-form .fdt-modal-actions {
+    margin: var(--fdt-space-5) calc(-1 * var(--fdt-space-6)) 0;
+    padding: var(--fdt-space-4) var(--fdt-space-6);
+}
+
+#edit-token-form .fdt-form-row,
+#edit-static-token-form .fdt-form-row {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: var(--fdt-space-4);
+}
+
+#edit-token-form .fdt-form-row label,
+#edit-static-token-form .fdt-form-row label {
+    font-size: var(--fdt-text-sm);
+    font-weight: 500;
+    color: var(--fdt-text-primary);
+    margin-bottom: var(--fdt-space-2);
+}
+
+#edit-token-form .fdt-form-row input,
+#edit-static-token-form .fdt-form-row input {
+    width: 100%;
+    height: 36px;
+    padding: 0.5rem 0.75rem;
+    background: var(--fdt-surface);
+    border: 1px solid var(--fdt-border);
+    border-radius: var(--fdt-radius-md);
+    font-family: var(--fdt-font-sans);
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-primary);
+    box-sizing: border-box;
+}
+
+.fdt-modal-actions {
+    display: flex;
+    gap: var(--fdt-space-3);
+    justify-content: flex-end;
+    padding: var(--fdt-space-4) var(--fdt-space-6);
+    border-top: 1px solid var(--fdt-border);
+    background: var(--fdt-gray-50);
+    border-radius: 0 0 12px 12px;
+}
+
+.fdt-modal-actions .button {
+    height: auto;
+    line-height: 1;
+    padding: 0.5rem 1rem;
+    font-size: var(--fdt-text-sm);
+    font-weight: 500;
+    border-radius: var(--fdt-radius-md);
+    cursor: pointer;
+    transition: all var(--fdt-transition-fast);
+}
+
+/* Modal Body */
+.fdt-modal-body {
+    padding: 0 var(--fdt-space-6) var(--fdt-space-6);
+}
+
+/* Delete Modal Specific Styles */
+.fdt-delete-message {
+    font-size: var(--fdt-text-base);
+    color: var(--fdt-text-primary);
+    margin: 0 0 var(--fdt-space-2) 0;
+    line-height: 1.5;
+}
+
+.fdt-delete-warning {
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-secondary);
+    margin: 0;
+}
+
+/* Danger Button - Full Red Styling with Maximum Specificity */
+.fdt-btn-danger,
+.fdt-btn-danger.button,
+.fdt-admin .fdt-btn-danger,
+#delete-token-modal .fdt-confirm-delete,
+#delete-token-modal .fdt-btn-danger,
+.fdt-modal .fdt-btn-danger,
+.fdt-modal-actions .fdt-btn-danger,
+button.fdt-btn-danger,
+.wrap .fdt-btn-danger {
+    background: #ef4444 !important;
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    border: 1px solid #ef4444 !important;
+    border-color: #ef4444 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    outline: none !important;
+}
+
+.fdt-btn-danger:hover,
+.fdt-btn-danger.button:hover,
+.fdt-admin .fdt-btn-danger:hover,
+#delete-token-modal .fdt-confirm-delete:hover,
+#delete-token-modal .fdt-btn-danger:hover,
+.fdt-modal .fdt-btn-danger:hover,
+.fdt-modal-actions .fdt-btn-danger:hover,
+button.fdt-btn-danger:hover,
+.wrap .fdt-btn-danger:hover,
+.fdt-btn-danger:focus,
+.fdt-btn-danger.button:focus,
+#delete-token-modal .fdt-confirm-delete:focus,
+#delete-token-modal .fdt-btn-danger:focus {
+    background: #dc2626 !important;
+    background-color: #dc2626 !important;
+    border: 1px solid #dc2626 !important;
+    border-color: #dc2626 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3) !important;
+    outline: none !important;
+}
+
+.fdt-btn-danger:active,
+.fdt-btn-danger.button:active,
+#delete-token-modal .fdt-confirm-delete:active,
+#delete-token-modal .fdt-btn-danger:active,
+.fdt-modal .fdt-btn-danger:active,
+.fdt-modal-actions .fdt-btn-danger:active {
+    background: #b91c1c !important;
+    background-color: #b91c1c !important;
+    border: 1px solid #b91c1c !important;
+    border-color: #b91c1c !important;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+
+/* Import Modal Specific Styles */
+.fdt-import-message {
+    font-size: var(--fdt-text-base);
+    color: var(--fdt-text-primary);
+    margin: 0 0 var(--fdt-space-2) 0;
+    line-height: 1.5;
+}
+
+.fdt-import-warning {
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-secondary);
+    margin: 0;
+}
+
+/* Import Modal Button - Theme Color */
+#confirm-import,
+#confirm-import.button,
+#import-confirm-modal .button-primary {
+    background: var(--fdt-primary) !important;
+    background-color: var(--fdt-primary) !important;
+    color: white !important;
+    border: 1px solid var(--fdt-primary) !important;
+    border-color: var(--fdt-primary) !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+#confirm-import:hover,
+#confirm-import.button:hover,
+#confirm-import:focus,
+#confirm-import.button:focus,
+#import-confirm-modal .button-primary:hover,
+#import-confirm-modal .button-primary:focus {
+    background: var(--fdt-primary-dark) !important;
+    background-color: var(--fdt-primary-dark) !important;
+    border: 1px solid var(--fdt-primary-dark) !important;
+    border-color: var(--fdt-primary-dark) !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3) !important;
+}
+
+#confirm-import:active,
+#confirm-import.button:active,
+#import-confirm-modal .button-primary:active {
+    background: var(--fdt-primary-dark) !important;
+    background-color: var(--fdt-primary-dark) !important;
+    border-color: var(--fdt-primary-dark) !important;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* ===================================
+   WordPress Notice Override
+   =================================== */
+.fdt-admin .notice {
+    margin: 0 0 var(--fdt-space-4) 0;
+    padding: var(--fdt-space-4);
+    border-radius: var(--fdt-radius-md);
+    border: 1px solid var(--fdt-border);
+    border-left-width: 3px;
+    background: var(--fdt-surface);
+    width: fit-content;
+}
+
+.fdt-admin .notice-info {
+    border-left-color: var(--fdt-primary);
+}
+
+.fdt-admin .notice p {
+    margin: 0;
+    font-size: var(--fdt-text-sm);
+    color: var(--fdt-text-primary);
+}
+
+/* ===================================
+   Success/Error States
+   =================================== */
+.fdt-success {
+    border-left-color: var(--fdt-success) !important;
+    background: rgba(16, 185, 129, 0.05) !important;
+    animation: successPulse 0.4s ease-out;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fdt-error {
+    border-left-color: var(--fdt-danger) !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+}
+
+/* Loading States */
+.fdt-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Tooltip */
+.fdt-tooltip {
+    position: absolute;
+    background: var(--fdt-gray-800);
+    color: white;
+    padding: var(--fdt-space-1) var(--fdt-space-2);
+    border-radius: var(--fdt-radius-sm);
+    font-size: var(--fdt-text-xs);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: all var(--fdt-transition-fast);
+    z-index: 100;
+    white-space: nowrap;
+}
+
+.fdt-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+    .fdt-admin {
+        padding: var(--fdt-space-4);
+    }
+
+    .fdt-sections-row {
+        grid-template-columns: 1fr;
+        gap: var(--fdt-space-4);
+    }
+
+    .fdt-section-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--fdt-space-3);
+    }
+
+    .fdt-root-controls {
+        flex-wrap: wrap;
+    }
+
+    .fdt-root-controls label {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .fdt-form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fdt-form-row input,
+    .fdt-form-row button {
+        width: 100%;
+    }
+
+    .fdt-token {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--fdt-space-3);
+    }
+
+    .fdt-token-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--fdt-space-2);
+    }
+
+    .fdt-token-value {
+        width: 100%;
+    }
+
+    .fdt-token-actions {
+        justify-content: stretch;
+    }
+
+    .fdt-token-actions button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .fdt-examples {
+        grid-template-columns: 1fr;
+    }
+
+    .fdt-modal-content {
+        width: 95%;
+        margin: var(--fdt-space-4);
+    }
+
+    .fdt-modal-actions {
+        flex-direction: column;
+    }
+
+    .fdt-modal-actions .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .fdt-admin>h1 {
+        font-size: var(--fdt-text-xl);
+    }
+
+    .fdt-section {
+        padding: var(--fdt-space-4);
+    }
+
+    .fdt-add-token,
+    .fdt-add-static-token {
+        padding: var(--fdt-space-4);
+    }
+
+    .fdt-token-actions {
+        flex-direction: column;
+    }
+
+    .fdt-edit-token,
+    .fdt-delete-token,
+    .fdt-edit-static-token,
+    .fdt-delete-static-token {
+        width: 100%;
+        text-align: center;
+        padding: var(--fdt-space-3);
+    }
+}
+
+/* ===================================
+   Floating Toast Notification
+   =================================== */
+.fdt-toast {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    transform: translateX(100px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: #ecfdf5;
+    color: #065f46;
+    border-radius: 10px;
+    border: 1px solid #a7f3d0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: var(--fdt-font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 999999;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.fdt-toast.fdt-toast-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fdt-toast.fdt-toast-hide {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.fdt-toast-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    background: #10b981;
+    color: #fff;
+}
+
+.fdt-toast-success {
+    background: #ecfdf5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.fdt-toast-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+.fdt-toast-error .fdt-toast-icon {
+    background: #ef4444;
+}
