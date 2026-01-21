@@ -150,6 +150,7 @@ This ensures your design tokens smoothly scale between the minimum and maximum v
   <img src="https://img.shields.io/badge/Umair_Khan-Contributor-green?style=for-the-badge&logo=github" alt="Umair Khan">
 </a>
 
+- 🌐 Website: [umairyousafzai.com](https://umairyousafzai.com/)
 - 💻 GitHub: [@theumair07](https://github.com/theumair07)
 
 ---
