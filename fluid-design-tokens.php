@@ -4,7 +4,7 @@
  * Description: A simple utility plugin for managing fluid design tokens using CSS custom properties with automatic viewport detection.
  * Version: 1.0.0
  * Author: Waqas Ahmed, Umair Khan
- * Author URI: https://iamwaqas.com
+ * Author URI: https://github.com/theumair07/fluid-design-tokens
  * Contributors: theumair07
  * License: GPL v2 or later
  * Text Domain: fluid-design-tokens
