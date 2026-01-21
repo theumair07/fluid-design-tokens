@@ -1,5 +1,5 @@
 === Fluid Design Tokens ===
-Contributors: waqasahmed
+Contributors: waqasahmed, theumair07
 Tags: design, tokens, css, responsive
 Requires at least: 5.0
 Tested up to: 6.9
